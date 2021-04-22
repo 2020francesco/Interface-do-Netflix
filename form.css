@@ -1,0 +1,134 @@
+:root {
+  --input-linear: linear-gradient(120 deg,   #afc7c9, #d9eea1);
+  --input-error: red;
+  --button-linear: linear-gradient(120 deg, #afc7c9, #d9ee);
+  --button-disabled: #cfcfcf;
+  --button-success: rgb(18, 151, 107);
+  --white: #fff;
+  --black: #303030;
+  --gray: #929292;
+  --light-gray: #cfcfcf;
+  --border-height: 1px;
+}
+
+body {
+ background: url("../img/planodefundo.jpg");
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  
+}
+
+.logo{
+  margin-left: 5px;
+  color: #f30c0c;
+  font-family: 'Arial Black', Times;
+  font-size: 40px;
+}
+
+.login {
+
+  height : 100vh;
+  background: var(--input-linear);
+ display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_container {
+  min-height: 400px;
+  width: 300px;
+  background-color: var(--white);
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(120deg, #73a586, #4f6868, #a4b676);
+}
+
+.login_form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.login_input{
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 12px;
+  border: unset;
+  outline: none;
+}
+
+.login_input-border {
+  height: 2px;
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #a6bfc0;
+  transition: .5s ease-in-out;
+}
+
+.login_input-border::after{
+  content: '  ';
+  display: block;
+  height: var(--border-height);
+  width: 0;
+  margin-bottom: 16px;
+  background: var(--input-linear);
+ transition: .3s ease-in-out;
+}
+
+.login_input:focus + .login_input-border::after {
+  width: 100%;
+}
+
+.login_input-border.error::after {
+  background: var(--input-error);
+}
+
+.login_submit {
+  height:48px;
+  width:100%;
+  padding-left: 8px;
+  outline: none;
+  background: linear-gradient(120deg, #c70707, #962c3a, #e65e5e);
+  background-size: 200%;
+  margin-bottom: 32px;
+  color: #3a3838;
+  font-size: 16px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.login_submit:disabled {
+  background: var(--button-disabled);
+  cursor: not-allowed;
+}
+
+.login_submit:hover {
+  background-position: right;
+}
+
+.login_submit.error {
+  background: var(--input-error);
+}
+
+.login_submit.success {
+  background: var(--button-success);
+}
+
+.login_reset {
+  font-size: 18px;
+  color:#3f3d3f;
+  text-decoration: none;
+ 
+}
